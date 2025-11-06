@@ -1,0 +1,536 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  font-weight: 600;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e91e63;
+}
+
+.nav-right a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #464646;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 200;
+  
+}
+
+
+/* Add this animation to your App.css */
+@keyframes rotateDown {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.hero-img2 {
+  width: auto;
+  height: auto;
+  animation: rotateDown 2s ease-in-out forwards; /* 2 seconds duration, infinite loop */
+  margin-left: 45rem;
+  margin-top: 10rem;
+}
+
+/* If you want it to rotate only once when the page loads, use this instead: */
+/* .hero-img2 {
+  width: auto;
+  height: auto;
+  animation: rotateDown 2s ease-in-out forwards;
+
+
+.nav-right a:hover {
+  color: #e91e63;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 8%;
+  background: #fff;
+}
+
+.hero-left {
+  max-width: 50%;
+  margin-left: 6rem;
+  
+}
+
+.hero-left h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.hero-left p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.hero-left .btn {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #e91e63;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.hero-left .btn:hover {
+  background: #e91e63;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-right {
+  position: relative;
+}
+.Text-1{
+    font-size: 5rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+.Text-2{
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.hero-img {
+  width: 550px;
+  height: 650px;
+  object-fit: cover;
+  border-radius: 0px 0px 250px 250px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-right: 10rem;
+}
+
+.circle-text {
+  position: absolute;
+  right: -80px;
+  bottom: 20px;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  color: #e91e63;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  transform: rotate(180deg);
+}
+
+/* Projects */
+.projects {
+  padding: 4rem 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #f9f9f9;
+}
+
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.project-card {
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.image-project{
+    width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #222;
+}
+
+.project-card p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.project-card .project-link {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-card .project-link:hover {
+  text-decoration: underline;
+}
+
+.blue { 
+  background: #edf3ff; 
+  border-left: 4px solid #3a86ff;
+}
+
+.pink { 
+  background: #ffe8f1; 
+  border-left: 4px solid #ff006e;
+}
+
+.browse-btn {
+  align-self: center;
+  padding: 0.8rem 2rem;
+  border: 1px solid #e91e63;
+  background: none;
+  border-radius: 6px;
+  color: #e91e63;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.browse-btn:hover {
+  background: #e91e63;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Skills */
+.skills {
+  padding: 4rem 8%;
+}
+
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.skills-grid p {
+  padding: 0.8rem 1.2rem;
+  background: #f5f5f5;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skills-grid p:hover {
+  background: #e91e63;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Testimonial */
+.testimonial {
+  background: #f5fff3;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 8%;
+}
+
+.testimonial img {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+  flex: 1;
+}
+
+.testimonial-text h4 {
+  font-size: 1.5rem;
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.client {
+  font-style: italic;
+  font-weight: 600;
+  color: #222;
+}
+
+.next-btn {
+  background: none;
+  border: 1px solid #e91e63;
+  color: #e91e63;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.next-btn:hover {
+  background: #e91e63;
+  color: white;
+}
+
+/* Blogs */
+.blogs {
+  padding: 4rem 8%;
+}
+
+.blogs h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.blog-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-card {
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.blog-card h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.blog-card p {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.explore-link {
+  display: block;
+  margin-top: 1rem;
+  text-align: right;
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.explore-link:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact {
+  background: #111;
+  color: #fff;
+  padding: 4rem 8%;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-family: inherit;
+  transition: background 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: #333;
+}
+
+.submit-btn {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: #e91e63;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero {
+    flex-direction: column;
+    padding: 2rem 5%;
+    text-align: center;
+  }
+  
+  .hero-left {
+    max-width: 100%;
+    margin-bottom: 2rem;
+   
+  }
+  
+  .hero-img {
+    width: 250px;
+    height: 250px;
+    
+  }
+  
+  .circle-text {
+    right: 0;
+    bottom: -60px;
+    transform: none;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .projects, .skills, .blogs, .contact {
+    padding: 2rem 5%;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .blog-list {
+    justify-content: center;
+  }
+  
+  .blog-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contact form {
+    max-width: 100%;
+  }
+}

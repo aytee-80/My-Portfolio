@@ -1,15 +1,23 @@
-
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dashboard from './dashboard/dash';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Testimonials from './components/Testimonials';
+import Blogs from './components/Blogs';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <Navbar />
+      <Hero />
+      <Projects />
+      <Skills />
+      <Testimonials />
+      <Blogs />
+      <Contact />
+    </div>
   );
 }
 
