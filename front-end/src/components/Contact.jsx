@@ -3,18 +3,7 @@ import React from "react";
 export default function Contact() {
   return (
     <footer className="contact" id="contact">
-      <h2>Say hello and let's work together!</h2>
-      <form>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="Your email address" />
-        </div>
-        <div className="form-group">
-          <label>Input your message</label>
-          <textarea placeholder="Describe your project"></textarea>
-        </div>
-        <button type="submit" className="submit-btn">Submit</button>
-      </form>
+      
 
       <div className="contact-info">
         <p><strong>Email:</strong> amogelangthompson@gmail.com</p>
