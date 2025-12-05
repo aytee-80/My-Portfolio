@@ -1,7 +1,7 @@
 import React from "react";
 import blog1 from "../assets/460244291-ed70d5c6-c147-4ea9-b6cd-6d7164dbee34.png";
 import blog2 from "../assets/IMG_0275.jpeg";
-import blog3 from "../assets/IMG_0684.jpeg";
+import blog3 from "../assets/ICEP2.JPG";
 
 export default function Blogs() {
   const blogs = [

@@ -1,0 +1,643 @@
+import React from "react";
+import libraryhub from "../assets/460244291-ed70d5c6-c147-4ea9-b6cd-6d7164dbee34.png";
+import lib1 from "../assets/libra1.png"
+import lib2 from "../assets/libra2.png"
+import lib3 from "../assets/libra3.png"
+import medi from "../assets/460244291-ed70d5c6-c147-4ea9-b6cd-6d7164dbee34.png";
+import medi1 from "../assets/medi1.png"
+import medi2 from "../assets/medi2.png"
+import medi3 from "../assets/medi3.png"
+import medi4 from "../assets/medi4.png"
+
+export default function Projects() {
+  return (
+    <section className="projects" id="projects">
+      <h2>Projects</h2>
+
+      <div className="project-item">
+        <div className="project-content">
+          <h4>First Project</h4>
+          <h2>Library Hub</h2>
+          <p>
+            A full-stack web application developed using Java, JSP, Servlets, HTML, CSS, and PostgreSQL.
+            It features user registration, login, borrow/return/reserve system, and an admin panel with
+            role-based access control built under the MVC architecture.
+          </p>
+          <a href="https://github.com/aytee-80" target="_blank" rel="noopener noreferrer">
+            View project →
+          </a>
+        </div>
+        <img src={libraryhub} alt="Library Hub" className="image-project" />
+          <img src={lib3} alt="Library Hub" className="image-project" />
+           <img src={lib2} alt="Library Hub" className="image-project" />
+            <img src={lib1} alt="Library Hub" className="image-project" />
+      </div>
+
+      <div className="project-item">
+        <div className="project-content">
+          <h4>Second Project</h4>
+          <h2>Medication Tracker</h2>
+          <p>
+            A Flask-based medication management app built with Python, PostgreSQL, JavaScript, HTML, and CSS.
+            Users can register, log in, add medication schedules, receive automated email reminders, and track
+            their pill usage. Hosted on Render.
+          </p>
+          <a href="https://github.com/aytee-80" target="_blank" rel="noopener noreferrer">
+            View project →
+          </a>
+        </div>
+        <img src={medi1} alt="Medication Tracker" className="image-project" />
+        <img src={medi2} alt="Medication Tracker" className="image-project" />
+        <img src={medi3} alt="Medication Tracker" className="image-project" />
+        <img src={medi4} alt="Medication Tracker" className="image-project" />
+      </div>
+
+      <a href="https://github.com/aytee-80" className="browse-btn" target="_blank" rel="noopener noreferrer">
+        Browse all projects
+      </a>
+    </section>
+  );
+}..../* App.css — Premium remake inspired by aayushbharti.in */
+
+/* -------------------------
+   Design tokens
+   ------------------------- */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --muted: #777777;
+  --text: #111111;
+  --accent: #e91e63;
+  --accent-600: #c2185b;
+  --glass: rgba(255, 255, 255, 0.6);
+  --shadow-1: 0 8px 30px rgba(15, 15, 15, 0.06);
+  --shadow-2: 0 18px 50px rgba(15, 15, 15, 0.08);
+  --radius-lg: 14px;
+  --radius-md: 8px;
+  --max-width: 1100px;
+  --transition: 350ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  --mono: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* -------------------------
+   Global reset
+   ------------------------- */
+* {
+  box-sizing: border-box;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--mono);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+/* -------------------------
+   NAVBAR (unchanged)
+   ------------------------- */
+.navbar {
+  position: sticky;
+  top: 12px;
+  z-index: 999;
+  margin: 0 auto;
+  width: calc(100% - 70vw);
+  max-width: var(--max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 1px;
+  border-radius: 19px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--transition), transform var(--transition), background var(--transition);
+}
+.nav-left {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.nav-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 auto;
+}
+.nav-right a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  transition: color var(--transition), transform var(--transition);
+}
+.nav-right a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+.cta-nav {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 12px;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.cta-nav:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-2);
+}
+.navbar.scrolled {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   HERO (unchanged)
+   ------------------------- */
+.hero {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  min-height: 72vh;
+}
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+}
+.hero-left h1 {
+  font-size: clamp(2.0rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.typewriter {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.6rem, 3.8vw, 1.5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+.typewriter .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--accent);
+  margin-left: 6px;
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  transform: translateY(-4px);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-card {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: -60px;
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 700ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.hero-card:hover {
+  transform: translateY(-8px);
+}
+.hero-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 0 0 200px 200px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  animation: floatY 3.6s ease-in-out infinite;
+}
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+.badge {
+  position: absolute;
+  right: 90%;
+  top: 30%;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  animation: spinIn 6s linear;
+}
+.badge img {
+  width: 200%;
+  height: auto;
+}
+@keyframes spinIn {
+  from { transform: rotate(180deg); }
+  to { transform: rotate(360deg); }
+}
+.follow-badge {
+  transition: transform 0.12s ease-out;
+  cursor: pointer;
+  z-index: 99;
+  pointer-events: auto;
+}
+.follow-badge:hover {
+  transform: scale(1.12);
+}
+@media (max-width: 480px) {
+  .follow-badge {
+    transform: none !important;
+  }
+  .badge {
+    display: none;
+  }
+}
+
+/* -------------------------
+   PROJECTS
+   ------------------------- */
+.projects {
+  background: #f9f9f9;
+  padding: 6rem 0;
+  text-align: center;
+}
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.project-item {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto 2rem auto;
+}
+.project-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+.project-content h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.project-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.project-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.project-content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.project-content a:hover {
+  text-decoration: underline;
+}
+.image-project {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.browse-btn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--accent);
+  background: none;
+  border-radius: 6px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  width: fit-content;
+}
+.browse-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+/* -------------------------
+   SKILLS
+   ------------------------- */
+.skills {
+  padding: 6rem 0;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 0 6%;
+}
+.skills-grid p {
+  padding: 0.8rem 1.2rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all var(--transition);
+  width: 100%;
+  max-width: 140px;
+  cursor: default;
+}
+.skills-grid p:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* -------------------------
+   TESTIMONIALS
+   ------------------------- */
+.testimonial {
+  background: #f5fff3;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 8%;
+  flex-wrap: wrap;
+}
+.testimonial img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--accent);
+}
+.testimonial-text {
+  flex: 1;
+  min-width: 280px;
+}
+.testimonial-text h4 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.testimonial-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.client {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* -------------------------
+   BLOGS
+   ------------------------- */
+.blogs {
+  padding: 6rem 0;
+  text-align: center;
+}
+.blogs h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.blog-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 6%;
+}
+.blog-card {
+  width: 100%;
+  max-width: 320px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+.blog-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.blog-card h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--text);
+  font-weight: 600;
+}
+.blog-card p {
+  color: var(--muted);
+  margin: 0.5rem 0;
+}
+.explore-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.explore-link:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   CONTACT
+   ------------------------- */
+.contact {
+  background: #111;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 700;
+}
+.contact-info {
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 6%;
+}
+.contact-info p {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.contact-info a:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+}
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* -------------------------
+   RESPONSIVE
+   ------------------------- */
+@media (max-width: 980px) {
+  .hero {
+    padding: 5rem 0;
+    gap: 1.6rem;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-right {
+    order: -1;
+  }
+  .hero-img{
+    margin-top: 50px;
+  }
+  .badge {
+    right: 10%;
+    top: -9%;
+    transform: translateX(50%);
+    bottom: -20px;
+    width: 60%;
+  }
+  .badge img {
+    display: none;
+  }
+  .navbar {
+    padding: 8px 14px;
+    width: calc(100% - 45vw);
+  }
+  .nav-right {
+    gap: 12px;
+  }
+  .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+  .testimonial {
+    flex-direction: column;
+    text-align: center;
+  }
+  .testimonial img {
+    margin-bottom: 1.5rem;
+  }
+  .skills-grid, .blog-list {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 5%;
+  }
+  .hero-left h1 {
+    font-size: 1.8rem;
+  }
+  .navbar {
+    padding: 8px 12px;
+    width: calc(100% - 4vw);
+  }
+}
+
+section.reveal { opacity: 0; transform: translateY(20px); transition: 0.8s; }
+section.reveal.show { opacity: 1; transform: translateY(0); }......i want this project images to be styled probaly like this guys portfolio https://aayushbharti.in/ ..look up the website i replicate the same styling for projects

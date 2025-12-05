@@ -1,6 +1,13 @@
 import React from "react";
 import libraryhub from "../assets/460244291-ed70d5c6-c147-4ea9-b6cd-6d7164dbee34.png";
+import lib1 from "../assets/libra1.png"
+import lib2 from "../assets/libra2.png"
+import lib3 from "../assets/libra3.png"
 import medi from "../assets/460244291-ed70d5c6-c147-4ea9-b6cd-6d7164dbee34.png";
+import medi1 from "../assets/medi1.png"
+import medi2 from "../assets/medi2.png"
+import medi3 from "../assets/medi3.png"
+import medi4 from "../assets/medi4.png"
 
 export default function Projects() {
   return (
@@ -21,6 +28,9 @@ export default function Projects() {
           </a>
         </div>
         <img src={libraryhub} alt="Library Hub" className="image-project" />
+          <img src={lib3} alt="Library Hub" className="image-project" />
+           <img src={lib2} alt="Library Hub" className="image-project" />
+            <img src={lib1} alt="Library Hub" className="image-project" />
       </div>
 
       <div className="project-item">
@@ -36,7 +46,10 @@ export default function Projects() {
             View project →
           </a>
         </div>
-        <img src={medi} alt="Medication Tracker" className="image-project" />
+        <img src={medi1} alt="Medication Tracker" className="image-project" />
+        <img src={medi2} alt="Medication Tracker" className="image-project" />
+        <img src={medi3} alt="Medication Tracker" className="image-project" />
+        <img src={medi4} alt="Medication Tracker" className="image-project" />
       </div>
 
       <a href="https://github.com/aytee-80" className="browse-btn" target="_blank" rel="noopener noreferrer">
