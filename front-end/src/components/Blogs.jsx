@@ -5,9 +5,10 @@ import blog3 from "../assets/ICEP2.JPG";
 
 export default function Blogs() {
   const blogs = [
+    { img: blog3, title: "My Journey at TUT and ICEP Internship", date: "Sep 25, 2025" },
     { img: blog1, title: "Building My First Full-Stack Web App", date: "Oct 16, 2025" },
     { img: blog2, title: "Learning Flask and Python for the Web", date: "Oct 2, 2025" },
-    { img: blog3, title: "My Journey at TUT and ICEP Internship", date: "Sep 25, 2025" },
+    
   ];
 
   return (

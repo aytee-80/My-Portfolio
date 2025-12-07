@@ -1,0 +1,291 @@
+/* AboutMe.css: animations, achievements, canvas background, progress lines */
+
+/* Reuse variables from App.css */
+@import '../App.css';
+
+:root {}
+
+.about-page {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parallax-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.par-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(233,30,99,0.08);
+  box-shadow: 0 8px 20px rgba(233,30,99,0.06);
+}
+
+.container { position: relative; z-index: 2; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+/* Hero */
+.about-hero {
+  padding: 4.5rem 6%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+  border-bottom: 1px solid rgba(16,16,16,0.03);
+}
+.about-hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.about-hero__text { flex: 1 1 420px; }
+.about-hero__text h1 {
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  margin: 0 0 0.6rem 0;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.about-hero__text p { color: var(--muted); max-width: 680px; line-height: 1.6; }
+.about-hero__btns { margin-top: 1.4rem; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.about-hero__image { flex: 0 0 320px; display: flex; justify-content: center; }
+.about-hero__image img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+  transform: translateY(0);
+  transition: transform 600ms var(--transition);
+}
+.reveal.show .about-hero__image img { transform: translateY(-6px); }
+
+/* Quick Facts */
+.about-quickfacts { padding: 3rem 6%; }
+.quickfacts__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.fact {
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+}
+.fact h4 { margin: 0; color: var(--accent); font-weight: 700; }
+.fact p, .fact ul { margin: 8px 0 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+
+/* GitHub Highlights — NEW SECTION */
+.github-section {
+  padding: 3rem 6%;
+}
+.github-section h2 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  color: var(--text);
+}
+.github-achievements {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+.achievements-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.achieve-logo-large {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(233, 30, 99, 0.15);
+  background: linear-gradient(45deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  transition: transform 0.3s ease;
+}
+.achieve-logo-large:hover {
+  transform: scale(1.05);
+}
+.achieve-label {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.gh-heatmap-large {
+  display: flex;
+  justify-content: center;
+}
+.gh-heat-large {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+}
+
+/* About Content */
+.about-content { padding: 3rem 6%; }
+.about-content h2 { font-size: 1.7rem; color: var(--text); margin-bottom: 12px; }
+.about-content p { color: var(--muted); max-width: 720px; line-height: 1.7; }
+.list { margin-left: 1rem; color: var(--muted); }
+
+/* Experience */
+.experience-section { padding: 3rem 6%; }
+.experience-list { display:flex; flex-direction:column; gap: 14px; max-width: var(--max-width); margin: 0 auto; }
+.experience-card {
+  display:flex; gap: 14px; align-items:flex-start;
+  background: var(--surface); padding: 14px; border-radius: 12px; box-shadow: var(--shadow-1); transition: var(--transition);
+}
+.experience-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-2); }
+
+.marker { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-600)); margin-top: 6px; box-shadow: 0 6px 18px rgba(233,30,99,0.12); }
+.details h3 { margin: 0; color: var(--text); }
+.duration { font-size: 0.95rem; color: var(--muted); margin-top:4px; }
+
+.progress-line { height: 8px; background: rgba(15,15,15,0.04); border-radius: 999px; overflow: hidden; margin-top: 12px; width: 100%; }
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(233,30,99,0.9), rgba(233,30,99,0.6));
+  transition: width 1000ms cubic-bezier(.2,.85,.25,1);
+  border-radius: 999px;
+}
+
+/* Education */
+.education-section { padding: 3rem 6%; }
+.edu-item h3 { margin: 0 0 4px 0; color: var(--text); }
+.edu-item p { color: var(--muted); margin: 0; }
+
+/* Contact CTA */
+.contact-section { padding: 4rem 6%; background: #111; color: #fff; text-align:center; }
+.contact-section .btn-primary { background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 10px; }
+
+.muted { color: var(--muted); font-size: 0.95rem; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .about-hero__inner { flex-direction: column; text-align: center; }
+  .about-hero__image { order: -1; margin-bottom: 12px; }
+  .quickfacts__inner { grid-template-columns: 1fr; }
+  .achieve-logo-large { width: 80px; height: 80px; }
+  .gh-heat-large { max-width: 100%; }
+}
+
+/* Scroll Stack Integration */
+.scroll-stack-section {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 6% 10rem;
+}
+
+/* Match your theme */
+.scroll-stack-card {
+  background: var(--surface) !important;
+  border-radius: 24px !important;
+  padding: 2.5rem !important;
+  box-shadow: var(--shadow-1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.scroll-stack-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.scroll-stack-card p {
+  margin: 0 0 0.8rem 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.scroll-stack-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.scroll-stack-card a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure buttons in scroll card match */
+.scroll-stack-card .about-hero__btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Font */
+:root {
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+}
+
+/* Simple Icons Styling */
+si-github, si-linkedin, si-email, si-phone, si-map-pin, si-graduation-cap, si-briefcase {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.225em;
+  display: inline-block;
+  margin-right: 0.4em;
+}
+
+/* Scroll Stack Icon Container */
+.scroll-stack-card .fact-icon {
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(233, 30, 99, 0.08);
+  border-radius: 12px;
+}
+
+.scroll-stack-card h3 {
+  margin: 0.4rem 0 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Button Icons */
+.btn si-github,
+.btn si-linkedin,
+.btn si-email {
+  margin-right: 0.5em;
+}
+
