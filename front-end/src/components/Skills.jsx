@@ -26,7 +26,7 @@ export default function Skills() {
     
     { name: "OOP", icon: "https://cdn.simpleicons.org/cplusplus" },
     { name: "Expo", icon: "https://cdn.simpleicons.org/expo" },
-    { name: "Render / Netlify", icon: "https://cdn.simpleicons.org/netlify" },
+    { name: "Render ", icon: "https://simpleicons.org/icons/render.svg" },
     { name: "JSON", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg" }, // added JSON
   ];
 

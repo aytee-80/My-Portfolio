@@ -12,6 +12,31 @@
   color: var(--text);
   min-height: 100vh;
 }
+/* Certificate list styling */
+.certificate-list {
+  padding-left: 1.2rem;
+}
+
+.certificate-list li {
+  margin-bottom: 0.6rem;
+}
+
+.certificate-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+  display: inline-block;
+}
+
+.certificate-list a:hover {
+  text-decoration: underline;
+  color: var(--accent-600);
+}
+
+.certificate-list a:active {
+  color: var(--accent);
+}
 
 .bg-canvas {
   position: fixed;
@@ -271,7 +296,7 @@ si-github, si-linkedin, si-email, si-phone, si-map-pin, si-graduation-cap, si-br
   justify-content: center;
   width: 42px;
   height: 42px;
-  background: rgba(233, 30, 99, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
 }
 

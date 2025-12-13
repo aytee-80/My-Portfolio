@@ -1,0 +1,259 @@
+/* src/styles/Journey.css */
+@import '../App.css';
+
+.journey-hero {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.5), rgba(233, 30, 99, 0.1));
+  color: var(--text);
+  padding: 4rem 6%;
+  text-align: center;
+}
+.journey-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin: 0 0 1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.journey-hero p {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+.journey-section {
+  padding: 3.5rem 6%;
+}
+.icep-bg {
+  background: rgba(233, 30, 99, 0.02);
+}
+.awards-bg {
+  background: var(--surface);
+}
+.reflection {
+  background: #0f0f0f;
+  color: #fff;
+}
+.reflection blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  color: var(--accent);
+}
+.reflection p {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ccc;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.journey-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.journey-content.reverse {
+  flex-direction: row-reverse;
+}
+.journey-text {
+  flex: 1;
+  min-width: 0;
+}
+.journey-image {
+  flex: 0 0 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: transform 0.4s ease;
+}
+.journey-image:hover {
+  transform: translateY(-4px);
+}
+.journey-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video & Project Preview */
+.project-preview {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+.project-preview p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Reduced from 650px */
+  max-height: 320px; /* Cap height to prevent huge players */
+  margin: 0 auto 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  background: #000;
+  aspect-ratio: 9 / 16; /* Standard mobile portrait ratio */
+}
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures full video is visible, no crop */
+  display: block;
+  outline: none;
+  background: #000;
+}
+
+/* Certificates — full visibility */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.award-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.award-card:hover {
+  box-shadow: var(--shadow-2);
+}
+.award-card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+  background: #f9f9f9;
+}
+.award-card h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.award-card p {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Text & Lists */
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.tech-list,
+.role-list {
+  padding-left: 1.4rem;
+  margin: 1rem 0;
+}
+.tech-list li,
+.role-list li {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+/* Animations */
+.section-to-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.section-to-animate.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .journey-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .journey-content.reverse {
+    flex-direction: column;
+  }
+  .journey-image {
+    width: 90%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    flex: 0 0 auto;
+  }
+  .journey-image img {
+    height: auto;
+    width: 100%;
+    /* Default for team/photo: cover */
+    object-fit: cover;
+  }
+  /* But for full-image (first one): contain */
+  .journey-image.full-image img {
+    object-fit: contain;
+    aspect-ratio: auto; /* respect original ratio */
+  }
+  .award-card img {
+    max-height: 250px;
+  }
+  .video-wrapper {
+    max-width: 90%;
+    max-height: 280px;
+    border-radius: 12px;
+  }
+}
+
+/* Full-image class: show entire photo without cropping */
+.journey-image.full-image img {
+  object-fit: contain;
+  background: #f5f5f5; /* subtle bg if image has transparency/white edges */
+}
+
+/* Section icons */
+.section-icon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.25em;
+  margin-right: 0.5em;
+  filter: var(--icon-filter, none);
+}
+.journey-text h2 {
+  display: flex;
+  align-items: center;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}

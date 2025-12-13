@@ -49,7 +49,7 @@ export default function Hero() {
           </div>
         </h1>
 
-        <a href="#projects" className="btn btn-outline">More about me →</a>
+        <a href="/about" className="btn btn-outline">More about me →</a>
       </div>
 
       <div className="hero-right">

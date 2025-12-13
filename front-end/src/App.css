@@ -55,12 +55,12 @@ body {
   top: 12px;
   z-index: 999;
   margin: 0 auto;
-  width: calc(100% - 70vw);
+  width: calc(100% - 75vw);
   max-width: var(--max-width);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 1px;
+  padding: 9px 1px;
   border-radius: 19px;
   background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));
   backdrop-filter: blur(6px) saturate(120%);
@@ -727,7 +727,7 @@ body {
   }
   .navbar {
     padding: 8px 14px;
-    width: calc(100% - 45vw);
+    width: calc(100% - 50vw);
   }
   .nav-right {
     gap: 12px;
@@ -758,7 +758,7 @@ body {
   }
   .navbar {
     padding: 8px 12px;
-    width: calc(100% - 4vw);
+    width: calc(100% - 30vw);
   }
 }
 

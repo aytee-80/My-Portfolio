@@ -11,12 +11,12 @@ import medi4 from "../assets/medi4.png";
 export default function Projects() {
   return (
     <section className="projects" id="projects">
-      <h2>Curated Work</h2>
+      <h2>Projects</h2>
 
       <div className="projects-grid">
         <ProjectCard
           title="Library Hub"
-          description="A digital library management system where librarians can add, edit, or remove books in real time. Users can browse the catalog, reserve unavailable books, and receive notifications when titles are ready — making access to knowledge seamless and fair for everyone."
+          description="A digital library management system where librarians can add, edit, or remove books in real time. Users can browse the catalog, reserve unavailable books, and receive notifications when titles are ready , making access to knowledge seamless and fair for everyone."
           images={[libraryhub, lib1, lib2, lib3]}
           tech={[
             { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", color: "#b07219" },
@@ -32,7 +32,7 @@ export default function Projects() {
 
         <ProjectCard
           title="Medication Tracker"
-          description="A personal health assistant that helps users manage their daily medications. Add your prescriptions, and the app sends email reminders if you miss a dose. Simply confirm when you’ve taken your pill — so nothing slips through the cracks."
+          description="A personal health assistant that helps users manage their daily medications. Add your prescriptions, and the app sends email reminders if you miss a dose. Simply confirm when you’ve taken your pill , so nothing slips through the cracks."
           images={[medi1, medi2, medi3, medi4]}
           tech={[
             { name: "Flask", icon: "https://cdn.simpleicons.org/flask/000000", color: "#000000" },

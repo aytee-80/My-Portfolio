@@ -5,9 +5,8 @@ import blog3 from "../assets/ICEP2.JPG";
 
 export default function Blogs() {
   const blogs = [
-    { img: blog3, title: "My Journey at TUT and ICEP Internship", date: "Sep 25, 2025" },
-    { img: blog1, title: "Building My First Full-Stack Web App", date: "Oct 16, 2025" },
-    { img: blog2, title: "Learning Flask and Python for the Web", date: "Oct 2, 2025" },
+    { img: blog3, title: "My Journey at TUT and ICEP Internship", date: "Dec 3, 2025" },
+   
     
   ];
 
@@ -23,8 +22,8 @@ export default function Blogs() {
           </div>
         ))}
       </div>
-      <a href="https://github.com/aytee-80" className="explore-link" target="_blank" rel="noopener noreferrer">
-        Explore →
+      <a href="/journey" className="explore-link" >
+        View →
       </a>
     </section>
   );

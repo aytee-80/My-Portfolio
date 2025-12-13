@@ -30,7 +30,7 @@ export default function Contact() {
         </p>
       </div>
 
-      <p className="footer-note">© 2025 Amogelang Thomson — Built with React</p>
+      <p className="footer-note">© 2025 Amogelang Thomson , Built with React</p>
     </footer>
   );
 }
