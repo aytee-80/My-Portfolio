@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import tutCampus from "../assets/ICEP1.JPG";
 import icepTeam from "../assets/team.jpeg";
 import smartEventsApp from "../assets/project.png";
-import frontendCert from "../assets/best 2.jpeg";
+import frontendCert from "../assets/cef 2.jpeg";
 import bestInternAward from "../assets/best 2.jpeg";
 import smartEventsVideo from "../assets/video.mp4";
 
