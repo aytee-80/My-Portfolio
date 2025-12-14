@@ -713,6 +713,10 @@ body {
   }
   .hero-right {
     order: -1;
+    
+  }
+  .hero-left{
+    margin-top: -10rem;
   }
   .hero-img{
     margin-top: 50px;
