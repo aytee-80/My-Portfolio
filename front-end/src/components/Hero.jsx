@@ -1,6 +1,6 @@
 // Hero.js
 import React, { useEffect, useRef } from 'react';
-import amogelang from '../assets/IMG_0684.jpeg';
+import amogelang from '../assets/ICEP1 face.JPG';
 import project from '../assets/Selection-removebg-preview.png';
 import { useTypewriter } from "../utils/ux";
 
