@@ -54,7 +54,7 @@ export default function Hero() {
 
       <div className="hero-right">
         <div className="hero-card">
-          <img src={amogelang} alt="Amogelang Thomson" className="hero-img" />
+          <img src={amogelang} alt="Amogelang Thomson"  className="hero-img" />
         </div>
 
         {/* CLICKABLE BADGE FOLLOWING CURSOR */}
