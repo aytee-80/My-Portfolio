@@ -45,7 +45,7 @@ export default function AboutMe() {
             <div className="about-hero__btns">
               <a
                 className="btn btn-primary"
-                href="/0 Amogelang_Thomson_CV_2025_updated (1).pdf"
+                href="/0 Amogelang_Thomson_CV_2025_updated (2).pdf"
                 target="_blank"
                 rel="noreferrer"
                 download='0 Amogelang_Thomson_CV_2025_updated (1).pdf'
