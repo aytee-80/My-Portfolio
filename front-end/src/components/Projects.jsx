@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import medi1 from "../assets/med 3.png"; 
+import medi2 from "../assets/med 4.png"; 
+import medi3 from "../assets/med 5.png"; 
+import medi4 from "../assets/med 6.png"; 
 
 export default function Projects() {
   return (
@@ -10,12 +13,12 @@ export default function Projects() {
         <ProjectCard
           title="Medication Tracker (AI Health Assistant)"
           description="AI-powered medication management platform that helps patients track prescriptions, monitor adherence, receive automated reminders, and access intelligent health insights through symptom analysis, medical image review, and a conversational health assistant."
-          images={[medi1, medi1, medi1, medi1]} // Replace with unique screenshots as you take them
+          images={[medi1, medi2, medi3, medi4]} 
           tech={[
             { name: "Flask", icon: "https://cdn.simpleicons.org/flask/ffffff" },
             { name: "Python", icon: "https://cdn.simpleicons.org/python/ffffff" },
             { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/ffffff" },
-            { name: "Groq AI", icon: "https://cdn.simpleicons.org/openai/ffffff" }
+            { name: "Groq AI", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/grok-ai-icon.png" }
           ]}
           githubUrl="https://medication-app2.onrender.com/"
         />
