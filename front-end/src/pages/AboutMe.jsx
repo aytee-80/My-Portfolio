@@ -4,7 +4,7 @@ import "../styles/AboutMe.css";
 import '../App.css';
 import Navbar from '../components/Navbar';
 
-import amogelang from "../assets/IMG_0684.jpeg";
+import amogelang from "../assets/graduate 1.jpeg";
 import ScrollStack, { ScrollStackItem } from "../Anima/Stack";
 
 export default function AboutMe() {
@@ -38,7 +38,7 @@ export default function AboutMe() {
           <div className="about-hero__text">
             <h1>About Me</h1>
             <p>
-              Final Year Computer Science Diploma student & Junior Software Developer. I enjoy collaborating,
+              Computer Science Diploma Graduate & Junior Software Developer. I enjoy collaborating,
               helping others, and building software that solves real problems. I’m disciplined, curious and committed
               to continuous improvement.
             </p>
@@ -55,7 +55,7 @@ export default function AboutMe() {
             </div>
           </div>
           <div className="about-hero__image">
-            <img src={amogelang} alt="Amogelang Thomson" />
+            <img src={amogelang} alt="Amogelang Thomson" height={90} />
           </div>
         </div>
       </section>

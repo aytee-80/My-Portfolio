@@ -101,10 +101,13 @@
   width: 100%;
   max-width: 320px;
   height: auto;
+  max-height: 500px;
   border-radius: 12px;
   box-shadow: var(--shadow-1);
   transform: translateY(0);
   transition: transform 600ms var(--transition);
+  padding-top: 0%;
+  overflow:hidden;
 }
 .reveal.show .about-hero__image img { transform: translateY(-6px); }
 

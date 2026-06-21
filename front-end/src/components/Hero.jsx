@@ -1,14 +1,14 @@
 // Hero.js
 import React, { useEffect, useRef } from 'react';
-import amogelang from '../assets/ICEP1 face.JPG';
+import amogelang from '../assets/graduate 2.jpeg';
 import project from '../assets/Selection-removebg-preview.png';
 import { useTypewriter } from "../utils/ux";
 
 
 export default function Hero() {
   const typeRef = useTypewriter([
-    "Final Year Computer Science Student",
-    "WIL Intern",
+    "Computer Science Graduate",
+    "unemployed",
     "Junior Software Developer"
   ], 90, 1800);
 
