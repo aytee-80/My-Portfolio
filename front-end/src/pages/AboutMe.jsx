@@ -45,10 +45,10 @@ export default function AboutMe() {
             <div className="about-hero__btns">
               <a
                 className="btn btn-primary"
-                href="/0 Amogelang_Thomson_CV_2025_updated (2).pdf"
+                href="/Amogelang_Thomson_CV.pdf"
                 target="_blank"
                 rel="noreferrer"
-                download='0 Amogelang_Thomson_CV_2025_updated (1).pdf'
+                download='Amogelang_Thomson_CV.pdf'
               >
                 Download CV
               </a>
