@@ -4,7 +4,7 @@
 .journey-hero {
   background: linear-gradient(135deg, rgba(61, 30, 233, 0.5), rgba(30, 159, 233, 0.1));
   color: var(--text);
-  padding: 4rem 6%;
+  padding: 6rem 0%;
   text-align: center;
 }
 .journey-hero h1 {
@@ -125,7 +125,7 @@
   margin: 0 auto;
 }
 .award-card {
-  background: white;
+  background: rgb(27, 27, 27);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-1);
@@ -142,7 +142,7 @@
   max-height: 300px;
   object-fit: contain;
   display: block;
-  background: #f9f9f9;
+  background: #202020;
 }
 .award-card h3 {
   padding: 1rem;

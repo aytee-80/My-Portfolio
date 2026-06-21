@@ -97,6 +97,7 @@
   border-radius: 8px;
 }
 .about-hero__image { flex: 0 0 320px; display: flex; justify-content: center; }
+/* Keep all your other code exactly as it was, just ensure your image rule has this: */
 .about-hero__image img {
   width: 100%;
   max-width: 320px;
@@ -107,7 +108,23 @@
   transform: translateY(0);
   transition: transform 600ms var(--transition);
   padding-top: 0%;
-  overflow:hidden;
+  overflow: hidden;
+
+  /* 👇 This adds the smooth floating animation */
+  animation: floatProfile 4s ease-in-out infinite;
+}
+
+/* 👇 The animation keyframe */
+@keyframes floatProfile {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust this value if you want it to move higher or lower */
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 .reveal.show .about-hero__image img { transform: translateY(-6px); }
 
