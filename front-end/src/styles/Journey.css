@@ -2,7 +2,7 @@
 @import '../App.css';
 
 .journey-hero {
-  background: linear-gradient(135deg, rgba(233, 30, 99, 0.5), rgba(233, 30, 99, 0.1));
+  background: linear-gradient(135deg, rgba(61, 30, 233, 0.5), rgba(30, 159, 233, 0.1));
   color: var(--text);
   padding: 4rem 6%;
   text-align: center;
