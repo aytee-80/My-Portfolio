@@ -1,30 +1,37 @@
 import React from "react";
-
-
+import { Link } from "react-router-dom";
 import blog3 from "../assets/ICEP2.JPG";
 
 export default function Blogs() {
   const blogs = [
-    { img: blog3, title: "My Journey at TUT and ICEP Internship", date: "Dec 3, 2025" },
-   
-    
+    {
+      img: blog3,
+      title: "My Journey at TUT and the ICEP Internship",
+      date: "Dec 3, 2025",
+      to: "/journey"
+    }
   ];
 
   return (
     <section className="blogs" id="blog">
-      <h2>My Blogs</h2>
+      <div className="sechead">
+        <span className="eyebrow">04 — Writing</span>
+        <span className="line" />
+      </div>
+
       <div className="blog-list">
         {blogs.map((b, i) => (
-          <div key={i} className="blog-card">
-            <img src={b.img} alt={b.title} />
+          <Link key={i} to={b.to} className="blog-card">
+            <img src={b.img} alt="" loading="lazy" />
             <h4>{b.title}</h4>
             <p>{b.date}</p>
-          </div>
+          </Link>
         ))}
       </div>
-      <a href="/journey" className="explore-link" >
-        View →
-      </a>
+
+      <Link to="/journey" className="explore-link">
+        Read the full journey →
+      </Link>
     </section>
   );
 }
