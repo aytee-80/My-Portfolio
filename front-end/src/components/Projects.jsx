@@ -1,80 +1,208 @@
-import React, { useState } from "react";
-import medi1 from "../assets/med 3.png"; 
-import medi2 from "../assets/med 4.png"; 
-import medi3 from "../assets/med 5.png"; 
-import medi4 from "../assets/med 6.png"; 
+import React from "react";
+import medi1 from "../assets/med 3.png";
+import medi2 from "../assets/med 4.png";
+import medi3 from "../assets/med 5.png";
+import medi4 from "../assets/med 6.png";
+import scan1 from "../assets/secure ai dash.png";
+import scan2 from "../assets/secure ai run scan.png";
+import scan3 from "../assets/results.png";
+import DecryptedText from "./reactbits/DecryptedText";
+import AccordionGallery from "./reactbits/AccordionGallery";
+
+/* ──────────────────────────────────────────────────────────────
+   ADD A PROJECT HERE.
+
+   Everything renders from this array — a new project is a new
+   object, no JSX to touch.
+
+   1. Put screenshots in src/assets/ and import them at the top of
+      this file, the same way med 3–6 are imported above.
+   2. Copy the commented template at the bottom of the array,
+      uncomment it, fill it in.
+   3. Newest first — the list renders in array order.
+
+   Fields:
+     year        Short label, e.g. "2026".
+     title       Project name. Keep it short; it's set in Anybody
+                 at display size and long names wrap badly.
+     blurb       Two sentences on the PROBLEM, not the feature list.
+     images      1–5 screenshots. 2+ renders as an accordion gallery —
+                 the first one expanded, others fanning open on hover.
+                 A single image renders as a plain static shot.
+     imageLabels Optional. One caption per entry in `images`, same
+                 order. Shown on whichever panel is expanded. Omit
+                 entirely (or leave shorter than `images`) to run
+                 captionless — don't invent captions for screens you
+                 haven't actually labelled.
+     tech        3–5 max. Past five it reads as padding.
+     url         Live link.
+     linkLabel   "Launch application", "View on GitHub", "Read the writeup".
+   ────────────────────────────────────────────────────────────── */
+
+const PROJECTS = [
+  {
+    year: "2026",
+    title: "SecureCode AI",
+    blurb:
+      "A vulnerability scanner for code that would otherwise only get caught in review — or not at all. It runs a hardened, Groq-backed analysis prompt across 30+ vulnerability categories and surfaces structured findings straight to the frontend instead of a wall of raw model output.",
+    images: [scan1, scan2, scan3],
+    imageLabels: ["Dashboard", "AI Analysing" , " Results"],
+    // No screenshots yet — swap this to the real ones and this project
+    // switches from the placeholder box to the gallery automatically.
+    tech: [
+      { name: "Groq", icon: "https://cdn.simpleicons.org/groq/79818f" }
+      // Add the rest of the stack here once confirmed — frontend
+      // framework, backend, anything else worth naming.
+    ],
+    url: "https://security-scaner-alpha.vercel.app/",
+    // Leave blank until there's a live link or repo — the card shows
+    // "Link coming soon" instead of a dead href when this is empty.
+    linkLabel: "View project"
+  },
+  {
+    year: "2025",
+    title: "Medication Tracker",
+    blurb:
+      "An AI health assistant for people managing several prescriptions at once, where a missed dose usually goes unnoticed until it matters. It tracks adherence, sends reminders, and reads symptom descriptions and medical images to flag what's worth raising with a doctor.",
+    images: [medi1, medi2, medi3, medi4],
+    imageLabels: ["login","Dashboard", "AI assistant" , "Analysis results"],
+    // No imageLabels yet — captions are off until real ones are supplied.
+    // To add them: imageLabels: ["Dashboard", "Reminders", "Symptom check", "AI assistant"]
+    tech: [
+      { name: "Flask", icon: "https://cdn.simpleicons.org/flask/79818f" },
+      { name: "Python", icon: "https://cdn.simpleicons.org/python/79818f" },
+      { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/79818f" },
+      { name: "Groq", icon: "https://cdn.simpleicons.org/groq/79818f" }
+    ],
+    url: "https://medication-app2.onrender.com/",
+    linkLabel: "Launch application"
+  }
+
+  // ── TEMPLATE — uncomment and fill in for your next project ──
+  // ,{
+  //   year: "2026",
+  //   title: "",
+  //   blurb: "",
+  //   images: [shotOne, shotTwo],
+  //   imageLabels: ["", ""],
+  //   tech: [
+  //     { name: "", icon: "https://cdn.simpleicons.org/SLUG/79818f" }
+  //   ],
+  //   url: "",
+  //   linkLabel: "View on GitHub"
+  // }
+];
 
 export default function Projects() {
   return (
     <section className="projects" id="projects">
-      <h2>Featured <span>Projects</span></h2>
-
-      <div className="projects-grid">
-        <ProjectCard
-          title="Medication Tracker (AI Health Assistant)"
-          description="AI-powered medication management platform that helps patients track prescriptions, monitor adherence, receive automated reminders, and access intelligent health insights through symptom analysis, medical image review, and a conversational health assistant."
-          images={[medi1, medi2, medi3, medi4]} 
-          tech={[
-            { name: "Flask", icon: "https://cdn.simpleicons.org/flask/ffffff" },
-            { name: "Python", icon: "https://cdn.simpleicons.org/python/ffffff" },
-            { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/ffffff" },
-            { name: "Groq AI", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/grok-ai-icon.png" }
-          ]}
-          githubUrl="https://medication-app2.onrender.com/"
-        />
+      <div className="sechead">
+        <span className="eyebrow">02 — Selected work</span>
+        <span className="line" />
       </div>
 
-      <a href="https://github.com/aytee-80" className="browse-btn" target="_blank" rel="noopener noreferrer">
-        Browse Complete Archive
+      <div className="projects-list">
+        {PROJECTS.map((p, i) => (
+          <ProjectEntry key={i} {...p} />
+        ))}
+      </div>
+
+      <a
+        href="https://github.com/aytee-80"
+        className="browse-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Browse complete archive
       </a>
     </section>
   );
 }
 
-function ProjectCard({ title, description, images, tech, githubUrl }) {
-  const [isHovered, setIsHovered] = useState(false);
+function ProjectEntry({ year, title, blurb, images, imageLabels, tech, url, linkLabel }) {
+  const hasLabels = Array.isArray(imageLabels) && imageLabels.length >= images.length;
 
   return (
-    <div className="project-card">
-      <div 
-        className="project-image-wrapper"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="project-image-container">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`${title} view ${index + 1}`}
-              className="project-image"
-              style={{
-                transform: isHovered 
-                  ? `translate3d(${index * 18}px, ${index * -12}px, 0) scale(0.95)` 
-                  : `translate3d(${index * 4}px, ${index * 4}px, 0)`,
-                zIndex: images.length - index,
-                opacity: isHovered && index > 0 ? 0.8 : 1
-              }}
-            />
-          ))}
-        </div>
+    <article className="project-entry">
+      <div className="project-gallery">
+        {images.length === 0 ? (
+          <div className="project-image-pending">Screenshots coming soon</div>
+        ) : images.length > 1 ? (
+          <AccordionGallery
+            items={images.map((img, i) => ({
+              image: img,
+              label: hasLabels ? imageLabels[i] : undefined,
+              alt: `${title} screenshot ${i + 1}`
+            }))}
+            defaultIndex={0}
+            height={420}
+            gap={10}
+            radius={12}
+            expandRatio={0.5}
+            trigger="hover"
+            showLabels={hasLabels}
+            grayscale
+            tilt={6}
+            parallax={0.4}
+            duration={0.5}
+            // Reads the page's own tokens instead of hardcoded hex, so the
+            // gallery re-skins automatically if the palette ever changes.
+            accentColor="var(--accent)"
+            overlayColor="var(--bg)"
+            textColor="var(--text)"
+            // Default cover crops these — they're wide UI screenshots
+            // (~2.2:1), not photos, so cropping cuts off exactly the parts
+            // that show it's a real dashboard. This class switches the
+            // panels to object-fit: contain instead (see App.css).
+            className="project-gallery-media"
+          />
+        ) : (
+          <img
+            src={images[0]}
+            alt={`${title} screenshot`}
+            className="project-image-single"
+          />
+        )}
       </div>
 
-      <div className="project-text">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <div className="tech-tags">
-          {tech.map((t, i) => (
-            <div key={i} className="tech-tag">
-              <img src={t.icon} alt={t.name} className="tech-icon" />
-              <span>{t.name}</span>
-            </div>
-          ))}
+      <div className="project-meta">
+        <div className="project-meta-head">
+          <span className="project-year">{year}</span>
+          <h3 className="project-title">
+            {/* inViewHover: scrambles once on scroll-in, again on hover.
+                Plain `hover` alone never fires on a touch screen. */}
+            <DecryptedText
+              text={title}
+              animateOn="inViewHover"
+              sequential
+              revealDirection="start"
+              speed={30}
+              className="project-title-on"
+              encryptedClassName="project-title-off"
+            />
+          </h3>
         </div>
-        <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-          Launch Application →
-        </a>
+
+        <p className="project-blurb">{blurb}</p>
+
+        <div className="project-foot">
+          <div className="tech-tags">
+            {tech.map((t, i) => (
+              <div key={i} className="tech-tag">
+                <img src={t.icon} alt="" className="tech-icon" />
+                <span>{t.name}</span>
+              </div>
+            ))}
+          </div>
+          {url ? (
+            <a href={url} target="_blank" rel="noopener noreferrer" className="project-link">
+              {linkLabel} →
+            </a>
+          ) : (
+            <span className="project-link project-link-pending">Link coming soon</span>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
