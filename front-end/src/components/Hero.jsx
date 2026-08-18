@@ -113,7 +113,7 @@ export default function Hero() {
                 className="hero-decrypt-on"
                 encryptedClassName="hero-decrypt-off"
               />{' '}
-               health tooling, full-stack platforms, and the systems people
+               health tooling,security scanners, and full-stack platforms, and the systems people
               actually have to use every day.
             </p>
 
