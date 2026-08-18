@@ -33,7 +33,7 @@ export default function Skills() {
   return (
     <section className="skills-section" id="skills">
       <div className="sechead">
-        <span className="eyebrow">03 — Stack</span>
+        <span className="eyebrow">03 Stack</span>
         <span className="line" />
       </div>
 
