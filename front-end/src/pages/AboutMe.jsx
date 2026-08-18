@@ -36,10 +36,10 @@ export default function AboutMe() {
           once it's there. Only one real photo exists for this page, so this
           is the single scroll-driven entrance rather than repeating it. */}
       <Navbar />
-      <h1 className="sr-only">About Me — Amogelang Thomson</h1>
+      <h1 className="sr-only">About Me</h1>
       <ScrollExpand
         src={amogelang}
-        alt="Amogelang Thomson"
+        alt="About me"
         scrollHint="Scroll to explore"
         useWindowScroll
         startWidth={46}
@@ -63,7 +63,7 @@ export default function AboutMe() {
             one after another. */}
         <div className="se-panel">
           <span className="se-kicker">About Me</span>
-          <h2 className="se-name">Amogelang Thomson</h2>
+          
           <p className="se-role">
             Computer Science Diploma Graduate &amp; Junior Software Developer
           </p>
@@ -113,182 +113,222 @@ export default function AboutMe() {
               <div className="fade-panel">
                 <span className="fade-kicker">Education</span>
                 <h2 className="fade-heading">Tshwane University of Technology</h2>
-                <p className="fade-sub">Diploma in Computer Science &mdash; Final Year (2025)</p>
+                <p className="fade-sub">Diploma in Computer Science</p>
               </div>
             )
           },
-          {
-            src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Backlit_keyboard.jpg',
-            alt: 'Backlit keyboard',
-            content: (
-              <div className="fade-panel">
-                <span className="fade-kicker">Contact</span>
-                <h2 className="fade-heading">Let&rsquo;s talk</h2>
-                <p className="fade-sub">
-                  <a href="mailto:amogelangthompson@gmail.com">amogelangthompson@gmail.com</a>
-                  {' '}&middot;{' '}
-                  <a href="tel:0670729097">067 072 9097</a>
-                </p>
-                <div className="fade-links">
-                  <a className="btn btn-outline" href="https://github.com/aytee-80" target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
-                  <a className="btn btn-ghost" href="https://www.linkedin.com/in/amogelang-thomson-369a7623a" target="_blank" rel="noreferrer">
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            )
-          },
-          {
-            src: amogelang,
-            alt: 'Amogelang Thomson',
-            objectPosition: '60% 6%',
-            content: (
-              <div className="fade-panel">
-                <span className="fade-kicker">That&rsquo;s Me</span>
-                <h2 className="fade-heading">Let&rsquo;s build something together.</h2>
-              </div>
-            )
-          }
+          
+          
         ]}
       />
 
-      {/* About Me */}
-      <section className="about-content container reveal">
-        <h2>Additional Information</h2>
-        <p>
-          I value teamwork and mutual learning. I help others, and I ask for help when I need it. That teamwork
-          mindset helps projects ship faster and cleaner. I work hard, keep organized, and focus on writing maintainable code.
-        </p>
+      {/* Everything from here to the bottom of the page shares one sticky,
+          blurred backdrop — the same closing photo from the ScrollFade
+          sequence above, held in place while Additional Info / GitHub /
+          Experience / Contact scroll over it. Each section's content sits
+          in a .trailing-panel (frosted card, same visual family as
+          .se-panel/.fade-panel higher up the page) so text stays legible
+          against a photo instead of needing its own opaque section
+          background.
 
-        <h3>Soft Skills</h3>
-        <ul className="list">
-          <li>Team player & collaborator</li>
-          <li>Good communication & time management</li>
-          <li>Problem-solving & analytical thinking</li>
-          <li>Adaptive, proactive, quick learner</li>
-          <li>Organized, diligent and attentive</li>
-        </ul>
-
-        <h3>Certificates & Courses</h3>
-<ul className="list certificate-list">
-  <li>
-    <a href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/responsive-web-design" target="_blank" rel="noreferrer">
-      Responsive Web Design (freeCodeCamp)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/javascript-algorithms-and-data-structures-v8" target="_blank" rel="noreferrer">
-      JavaScript Algorithms & Data Structures (freeCodeCamp)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/front-end-development-libraries" target="_blank" rel="noreferrer">
-      Front End Development Libraries (freeCodeCamp)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/relational-database-v8" target="_blank" rel="noreferrer">
-      Relational Database (SQL) (freeCodeCamp)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/back-end-development-and-apis" target="_blank" rel="noreferrer">
-      Back End Development & APIs (freeCodeCamp)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.hackerrank.com/certificates/628369010cb6" target="_blank" rel="noreferrer">
-      SQL(HackerRank)
-    </a>
-  </li>
-  <li>
-    <a href="https://www.hackerrank.com/certificates/dc26de9306d9" target="_blank" rel="noreferrer">
-      React (HackerRank)
-    </a>
-  </li>
-</ul>
-      </section>
-
-      {/* GitHub Highlights */}
-      <section className="github-section container reveal">
-        <h2>GitHub Highlights</h2>
-        <div className="github-achievements">
-          <div className="achievements-row">
-            <a href="https://github.com/aytee-80" target="_blank" rel="noreferrer" title="YOLO">
-              <img
-                className="achieve-logo-large"
-                src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png"
-                alt="YOLO"
-              />
-              <div className="achieve-label">YOLO</div>
-            </a>
-            <a href="https://github.com/aytee-80" target="_blank" rel="noreferrer" title="Pull Shark">
-              <img
-                className="achieve-logo-large"
-                src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png"
-                alt="Pull Shark"
-              />
-              <div className="achieve-label">Pull Shark ×2</div>
-            </a>
-          </div>
-          <div className="gh-heatmap-large">
-            <img
-              alt="GitHub contributions"
-              src={`https://ghchart.rshah.org/aytee-80`}
-              className="gh-heat-large"
-            />
-          </div>
+          The handoff from the ScrollFade sequence isn't cross-faded — the
+          closing slide is sharp and full-colour, then this backdrop starts
+          blurred from its very first frame. A true blur-interpolated
+          handoff between two separate DOM trees is a lot of extra
+          machinery for a transition most visitors will only see once;
+          this is the simpler, still-good version. Say if you want the
+          seamless one and I'll build it. */}
+      <div className="about-trailing">
+        <div className="about-trailing__bg" aria-hidden="true">
+          <img src={amogelang} alt="" className="about-trailing__bg-img" />
+          <div className="about-trailing__scrim" />
         </div>
-      </section>
 
-      {/* Experience */}
-      <section className="experience-section container reveal">
-        <h2>Experience</h2>
-        <div className="experience-list">
-          <div className="experience-card">
-            <div className="marker" />
-            <div className="details">
-              <h3>ICEP - Junior Software Developer Intern</h3>
-              <p className="duration">14 Jul 2025 – 31 Dec 2025</p>
-              <p className="muted">
-                WIL internship: practical project work, team collaboration and improved development workflow skills.
-              </p>
-              <p className="muted">
-                Mentor: Mr Modishi Gustav Mamosadi 
-              </p>
-              <p className="muted">
-                Mail: <a href="mailto:MamosadiMG@tut.ac.za">MamosadiMG@tut.ac.za</a> 
-              </p>
-              <p className="muted">
-                Call: <a href="tel:0722826821">0722826821</a>
-              </p>
-              
+        <section className="about-content container reveal">
+          <div className="trailing-panel">
+            <div className="sechead">
+              <span className="eyebrow">Additional Information</span>
+              <span className="line" />
+            </div>
+            <p className="about-content-lede">
+              I value teamwork and mutual learning. I help others, and I ask for help when I need it. That teamwork
+              mindset helps projects ship faster and cleaner. I work hard, keep organized, and focus on writing maintainable code.
+            </p>
+
+            <h3 className="about-subhead">Soft Skills</h3>
+            <div className="skill-pills">
+              <span className="skill-pill">Team player &amp; collaborator</span>
+              <span className="skill-pill">Communication &amp; time management</span>
+              <span className="skill-pill">Problem-solving &amp; analytical thinking</span>
+              <span className="skill-pill">Adaptive, proactive, quick learner</span>
+              <span className="skill-pill">Organized, diligent, attentive</span>
+            </div>
+
+            <h3 className="about-subhead">Certificates &amp; Courses</h3>
+            <div className="cert-list">
+              <a
+                className="cert-row"
+                href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/responsive-web-design"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/freecodecamp/79818f" alt="" />
+                <span className="cert-name">Responsive Web Design</span>
+                <span className="cert-provider">freeCodeCamp</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/javascript-algorithms-and-data-structures-v8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/freecodecamp/79818f" alt="" />
+                <span className="cert-name">JavaScript Algorithms &amp; Data Structures</span>
+                <span className="cert-provider">freeCodeCamp</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/front-end-development-libraries"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/freecodecamp/79818f" alt="" />
+                <span className="cert-name">Front End Development Libraries</span>
+                <span className="cert-provider">freeCodeCamp</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/relational-database-v8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/freecodecamp/79818f" alt="" />
+                <span className="cert-name">Relational Database (SQL)</span>
+                <span className="cert-provider">freeCodeCamp</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.freecodecamp.org/certification/fcc-bd9ddaf6-1ad2-4dce-884b-65e34845241d/back-end-development-and-apis"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/freecodecamp/79818f" alt="" />
+                <span className="cert-name">Back End Development &amp; APIs</span>
+                <span className="cert-provider">freeCodeCamp</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.hackerrank.com/certificates/628369010cb6"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/hackerrank/79818f" alt="" />
+                <span className="cert-name">SQL</span>
+                <span className="cert-provider">HackerRank</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="cert-row"
+                href="https://www.hackerrank.com/certificates/dc26de9306d9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="cert-icon" src="https://cdn.simpleicons.org/hackerrank/79818f" alt="" />
+                <span className="cert-name">React</span>
+                <span className="cert-provider">HackerRank</span>
+                <span className="cert-arrow" aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
-          <div className="experience-card">
-            <div className="marker" />
-            <div className="details">
-              <h3>Makro - Packer</h3>
-              <p className="duration">01 Sep 2022 – 29 Jan 2023</p>
-              <p className="muted">Early work experience: discipline, time management & teamwork.</p>
-             
+        </section>
+
+        <section className="github-section container reveal">
+          <div className="trailing-panel">
+            <h2>GitHub Highlights</h2>
+            <div className="github-achievements">
+              <div className="achievements-row">
+                <a href="https://github.com/aytee-80" target="_blank" rel="noreferrer" title="YOLO">
+                  <img
+                    className="achieve-logo-large"
+                    src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png"
+                    alt="YOLO"
+                  />
+                  <div className="achieve-label">YOLO</div>
+                </a>
+                <a href="https://github.com/aytee-80" target="_blank" rel="noreferrer" title="Pull Shark">
+                  <img
+                    className="achieve-logo-large"
+                    src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png"
+                    alt="Pull Shark"
+                  />
+                  <div className="achieve-label">Pull Shark ×2</div>
+                </a>
+              </div>
+              <div className="gh-heatmap-large">
+                <img
+                  alt="GitHub contributions"
+                  src={`https://ghchart.rshah.org/aytee-80`}
+                  className="gh-heat-large"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact CTA */}
-      <section className="contact-section reveal">
-        <div className="container">
-          <h2>Let's build something together</h2>
-          <p>Open to internships, junior roles and collaboration. Reach out , I reply fast.</p>
-          <a className="btn btn-primary" href="mailto:amogelangthompson@gmail.com">
-            <si-email /> Contact Me
-          </a>
-        </div>
-      </section>
+        <section className="experience-section container reveal">
+          <div className="trailing-panel">
+            <h2>Experience</h2>
+            <div className="experience-list">
+              <div className="experience-card">
+                
+                <div className="details">
+                  <h3>ICEP <span className="muted"> * Software Developer Intern</span></h3>
+                  <p className="duration">14 Jul 2025 – 31 Dec 2025</p>
+                  <p className="muted">
+                    WIL internship: practical project work, team collaboration and improved development workflow skills.
+                  </p>
+                  <p className="muted">
+                    Mentor: Mr Modishi Gustav Mamosadi 
+                  </p>
+                  <p className="muted">
+                    Mail: <a href="mailto:MamosadiMG@tut.ac.za" target="_blank" rel="noreferrer" style={{ color: '#c09139' }}>
+                      MamosadiMG@tut.ac.za
+                    </a>
+                  </p>
+                  <p className="muted">
+                    Call: <a href="tel:0722826821" target="_blank" rel="noreferrer" style={{ color: '#c09139' }}>
+                      0722826821
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="experience-card">
+                
+                <div className="details">
+                  <h3>Makro <span className="muted"> * Packer</span></h3>
+                  <p className="duration">01 Sep 2022 – 29 Jan 2023</p>
+                  <p className="muted">Early work experience: discipline, time management & teamwork.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-section reveal">
+          <div className="trailing-panel container">
+            <h2>Let's build something together</h2>
+            <p>Open to internships, junior roles and collaboration. Reach out , I reply fast.</p>
+            <a className="btn btn-primary" href="mailto:amogelangthompson@gmail.com">
+              Contact Me →
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
