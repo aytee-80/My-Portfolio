@@ -1,0 +1,12 @@
+/* Source: React Bits — SideRays.css (JS-CSS variant), verbatim apart from
+   the z-index note below. */
+.side-rays-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  /* Upstream ships z-index: 3, correct for their demo where the rays sit on
+     top of everything. Here they're a hero backdrop — stacking is handled
+     by .hero-rays in App.css instead, so this stays passive. */
+  overflow: hidden;
+}
