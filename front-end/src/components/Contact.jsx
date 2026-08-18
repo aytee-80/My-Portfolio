@@ -5,7 +5,7 @@ export default function Contact() {
     <footer className="contact" id="contact">
       <div className="contact-inner">
         <div className="sechead">
-          <span className="eyebrow">05 — Contact</span>
+          <span className="eyebrow">05 Contact</span>
           <span className="line" />
         </div>
 
