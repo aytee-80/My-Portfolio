@@ -15,7 +15,7 @@ export default function Blogs() {
   return (
     <section className="blogs" id="blog">
       <div className="sechead">
-        <span className="eyebrow">04 — Writing</span>
+        <span className="eyebrow">04 Writing</span>
         <span className="line" />
       </div>
 
