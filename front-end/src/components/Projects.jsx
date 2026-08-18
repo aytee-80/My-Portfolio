@@ -50,9 +50,10 @@ const PROJECTS = [
     // No screenshots yet — swap this to the real ones and this project
     // switches from the placeholder box to the gallery automatically.
     tech: [
+      { name: "React", icon: "https://cdn.simpleicons.org/react/79818f" },
+      { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/79818f" },
+      { name: "CSS", icon: "https://cdn.simpleicons.org/css3/79818f" },
       { name: "Groq", icon: "https://cdn.simpleicons.org/groq/79818f" }
-      // Add the rest of the stack here once confirmed — frontend
-      // framework, backend, anything else worth naming.
     ],
     url: "https://security-scaner-alpha.vercel.app/",
     // Leave blank until there's a live link or repo — the card shows
