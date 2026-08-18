@@ -98,7 +98,7 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="sechead">
-        <span className="eyebrow">02 — Selected work</span>
+        <span className="eyebrow">02 Selected work</span>
         <span className="line" />
       </div>
 
