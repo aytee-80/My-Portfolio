@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import medi1 from "../assets/med 3.png";
 import medi2 from "../assets/med 4.png";
 import medi3 from "../assets/med 5.png";
@@ -28,7 +28,9 @@ import AccordionGallery from "./reactbits/AccordionGallery";
      blurb       Two sentences on the PROBLEM, not the feature list.
      images      1–5 screenshots. 2+ renders as an accordion gallery —
                  the first one expanded, others fanning open on hover.
-                 A single image renders as a plain static shot.
+                 A single image renders as a plain static shot. On
+                 phones (below 640px), 2+ images also fall back to a
+                 plain shot — see useIsMobile below.
      imageLabels Optional. One caption per entry in `images`, same
                  order. Shown on whichever panel is expanded. Omit
                  entirely (or leave shorter than `images`) to run
@@ -44,11 +46,9 @@ const PROJECTS = [
     year: "2026",
     title: "SecureCode AI",
     blurb:
-      "A vulnerability scanner for code that would otherwise only get caught in review — or not at all. It runs a hardened, Groq-backed analysis prompt across 30+ vulnerability categories and surfaces structured findings straight to the frontend instead of a wall of raw model output.",
+      "A vulnerability scanner for code that would otherwise only get caught in review or not at all. It runs a hardened, Groq-backed analysis prompt across 30+ vulnerability categories and surfaces structured findings straight to the frontend instead of a wall of raw model output.",
     images: [scan1, scan2, scan3],
-    imageLabels: ["Dashboard", "AI Analysing" , " Results"],
-    // No screenshots yet — swap this to the real ones and this project
-    // switches from the placeholder box to the gallery automatically.
+    imageLabels: ["Dashboard", "AI Analysing", "Results"],
     tech: [
       { name: "React", icon: "https://cdn.simpleicons.org/react/79818f" },
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/79818f" },
@@ -56,8 +56,6 @@ const PROJECTS = [
       { name: "Groq", icon: "https://cdn.simpleicons.org/groq/79818f" }
     ],
     url: "https://security-scaner-alpha.vercel.app/",
-    // Leave blank until there's a live link or repo — the card shows
-    // "Link coming soon" instead of a dead href when this is empty.
     linkLabel: "View project"
   },
   {
@@ -66,9 +64,7 @@ const PROJECTS = [
     blurb:
       "An AI health assistant for people managing several prescriptions at once, where a missed dose usually goes unnoticed until it matters. It tracks adherence, sends reminders, and reads symptom descriptions and medical images to flag what's worth raising with a doctor.",
     images: [medi1, medi2, medi3, medi4],
-    imageLabels: ["login","Dashboard", "AI assistant" , "Analysis results"],
-    // No imageLabels yet — captions are off until real ones are supplied.
-    // To add them: imageLabels: ["Dashboard", "Reminders", "Symptom check", "AI assistant"]
+    imageLabels: ["Login", "Dashboard", "AI assistant", "Analysis results"],
     tech: [
       { name: "Flask", icon: "https://cdn.simpleicons.org/flask/79818f" },
       { name: "Python", icon: "https://cdn.simpleicons.org/python/79818f" },
@@ -107,8 +103,8 @@ export default function Projects() {
           <ProjectEntry key={i} {...p} />
         ))}
       </div>
-
       <a
+      
         href="https://github.com/aytee-80"
         className="browse-btn"
         target="_blank"
@@ -120,15 +116,38 @@ export default function Projects() {
   );
 }
 
+// AccordionGallery is a hover-driven, GSAP-timeline, ResizeObserver-watched
+// component — a lot of moving parts for a phone screen where "hover" isn't
+// even a real interaction. Rather than chase whichever specific thing broke
+// on a specific device, phones just don't mount it at all: below 640px this
+// hook flips ProjectEntry over to a single plain <img>, which cannot
+// silently fail the way a multi-panel animated gallery can.
+function useIsMobile(breakpoint = 640) {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth < breakpoint
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 function ProjectEntry({ year, title, blurb, images, imageLabels, tech, url, linkLabel }) {
   const hasLabels = Array.isArray(imageLabels) && imageLabels.length >= images.length;
+  const isMobile = useIsMobile();
 
   return (
     <article className="project-entry">
       <div className="project-gallery">
         {images.length === 0 ? (
           <div className="project-image-pending">Screenshots coming soon</div>
-        ) : images.length > 1 ? (
+        ) : images.length > 1 && !isMobile ? (
           <AccordionGallery
             items={images.map((img, i) => ({
               image: img,
