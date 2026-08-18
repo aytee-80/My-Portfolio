@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="nav-right">
         <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
-        <a href="/journey">Blogs</a>
+        <Link to="/journey" className={location.pathname === '/journey' ? 'active' : ''}>Blogs</Link>
         
       </div>
     </nav>
