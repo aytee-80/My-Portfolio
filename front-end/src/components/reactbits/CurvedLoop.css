@@ -1,0 +1,48 @@
+/* Adapted from React Bits — CurvedLoop.css
+   Upstream set `min-height: 100vh` on the jacket and a hard `fill: #ffffff`.
+   Both are demo-page defaults: dropped mid-page, the 100vh punches a full
+   empty viewport into the layout. Height now comes from the SVG's own
+   aspect-ratio, and colour reads the theme tokens. */
+
+.curved-loop-jacket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.curved-loop-jacket:active { cursor: grabbing; }
+
+.curved-loop-svg {
+  width: 100%;
+  aspect-ratio: 100 / 12;
+  overflow: visible;
+  display: block;
+  font-family: var(--display, 'Anybody', system-ui, sans-serif);
+  font-size: 5rem;
+  font-weight: 700;
+  font-variation-settings: 'wdth' 88;
+  text-transform: uppercase;
+  line-height: 1;
+
+  /* Outlined, not filled — the band sits between two content sections and
+     solid type at this size shouts over both of them. */
+  fill: transparent;
+  stroke: var(--accent, #c9a24b);
+  stroke-width: 1;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Below ~720px a 1px outline on 3rem type is too fine to read, so fill it. */
+@media (max-width: 720px) {
+  .curved-loop-svg {
+    font-size: 2.75rem;
+    fill: var(--accent, #c9a24b);
+    stroke: none;
+  }
+}
