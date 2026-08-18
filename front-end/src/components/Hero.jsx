@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="hero-meta">
           <span className="eyebrow">Amogelang Thomson · Johannesburg, ZA</span>
           <span className="eyebrow hero-status">
-            <i aria-hidden="true" />
+            
             Open to junior &amp; graduate roles
           </span>
         </div>
@@ -113,7 +113,7 @@ export default function Hero() {
                 className="hero-decrypt-on"
                 encryptedClassName="hero-decrypt-off"
               />{' '}
-              — health tooling, full-stack platforms, and the systems people
+               health tooling, full-stack platforms, and the systems people
               actually have to use every day.
             </p>
 
@@ -126,8 +126,17 @@ export default function Hero() {
               </a>
             </div>
 
-            <p className="hero-hint">Move your cursor across the name</p>
-          </div>
+           <p className="hero-hint">
+              {/* TextPressure already listens for touchmove, so dragging a
+                  finger across the name does warp it — a tap alone won't,
+                  since there's no continuous cursor position to follow.
+                  The desktop copy doesn't tell mobile visitors that, so
+                  swap it via CSS at the same breakpoint the layout
+                  itself switches to single-column. */}
+              <span className="hero-hint-desktop">Move your cursor across the name</span>
+              <span className="hero-hint-touch">Touch and drag across the name</span>
+            </p>
+            </div>
 
           <div className="hero-right">
             <div className="hero-card">
