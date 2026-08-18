@@ -148,21 +148,21 @@
   box-shadow: var(--shadow-2);
 }
 
-/* About Content */
-.about-content { padding: 3rem 6%; }
-.about-content h2 { font-size: 1.7rem; color: var(--text); margin-bottom: 12px; }
-.about-content p { color: var(--muted); max-width: 720px; line-height: 1.7; }
-.list { margin-left: 1rem; color: var(--muted); }
 
 /* Experience */
 .experience-section { padding: 3rem 6%; }
 .experience-list { display:flex; flex-direction:column; gap: 14px; max-width: var(--max-width); margin: 0 auto; }
 .experience-card {
   display:flex; gap: 14px; align-items:flex-start;
-  background: var(--surface); padding: 14px; border-radius: 12px; box-shadow: var(--shadow-1); transition: var(--transition);
+  background: rgba(234, 230, 220, 0.05);
+  border: 1px solid rgba(234, 230, 220, 0.12);
+  padding: 14px; border-radius: 12px; transition: var(--transition);
 }
-.experience-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-2); }
-
+.experience-card:hover {
+  transform: translateY(-6px);
+  background: rgba(234, 230, 220, 0.08);
+  border-color: rgba(201, 162, 75, 0.3);
+}
 .marker { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-600)); margin-top: 6px; box-shadow: 0 6px 18px rgba(233,30,99,0.12); }
 .details h3 { margin: 0; color: var(--text); }
 .duration { font-size: 0.95rem; color: var(--muted); margin-top:4px; }
@@ -181,10 +181,131 @@
 .edu-item h3 { margin: 0 0 4px 0; color: var(--text); }
 .edu-item p { color: var(--muted); margin: 0; }
 
-/* Contact CTA */
-.contact-section { padding: 4rem 6%; background: #111; color: #fff; text-align:center; }
-.contact-section .btn-primary { background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 10px; }
 
+/* About Content */
+.about-content { padding: 3rem 6%; }
+
+.about-content-lede { color: var(--muted); max-width: 720px; line-height: 1.7; margin-bottom: 2.5rem; }
+
+/* Small uppercase label instead of a full <h2> — matches the eyebrow
+   treatment used for section headers elsewhere on the site rather than
+   introducing a second, heavier heading style just for this page. */
+.about-subhead {
+  font-family: var(--util, inherit);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--patina, #6ea79b);
+  margin: 2.5rem 0 1rem;
+}
+.about-subhead:first-of-type { margin-top: 0; }
+
+/* -------------------------
+   SOFT SKILLS — pills
+   ------------------------- */
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--hair, rgba(234, 230, 220, 0.11));
+  font-family: var(--sans, inherit);
+  font-size: 0.85rem;
+  color: var(--text, #eae6dc);
+  background: transparent;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.skill-pill:hover {
+  border-color: var(--accent, #c9a24b);
+  color: var(--accent, #c9a24b);
+}
+
+/* -------------------------
+   CERTIFICATES — hairline list
+   ------------------------- */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--hair, rgba(234, 230, 220, 0.11));
+}
+
+.cert-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 0.25rem;
+  border-bottom: 1px solid var(--hair, rgba(234, 230, 220, 0.11));
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.25s ease, border-color 0.25s ease;
+}
+
+.cert-row:hover {
+  padding-left: 0.6rem;
+  border-color: rgba(201, 162, 75, 0.3);
+}
+
+.cert-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  opacity: 0.85;
+}
+
+.cert-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--sans, inherit);
+  font-size: 0.98rem;
+  color: var(--text, #eae6dc);
+  transition: color 0.25s ease;
+}
+
+.cert-row:hover .cert-name { color: var(--accent, #c9a24b); }
+
+.cert-provider {
+  flex: 0 0 auto;
+  font-family: var(--util, inherit);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, #79818f);
+  white-space: nowrap;
+}
+
+.cert-arrow {
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  color: var(--muted, #79818f);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.cert-row:hover .cert-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: var(--accent, #c9a24b);
+}
+
+@media (max-width: 600px) {
+  .cert-provider { display: none; }
+}
+
+/* Contact CTA */
+/* Contact CTA — background moved to .about-trailing__bg (shared sticky
+   photo behind this whole trailing group); the stray .btn-primary override
+   below is gone too, so this button now matches every other .btn-primary
+   on the site instead of its own one-off white-on-accent style. */
+.contact-section { padding: 4rem 6%; text-align: center; }
 .muted { color: var(--muted); font-size: 0.95rem; }
 
 /* Responsive */
@@ -494,4 +615,62 @@ si-github, si-linkedin, si-email, si-phone, si-map-pin, si-graduation-cap, si-br
     opacity: 1;
     transform: none;
   }
+}
+
+/* -------------------------
+   TRAILING SECTIONS — sticky blurred backdrop
+   -------------------------
+   .about-trailing wraps Additional Info / GitHub / Experience / Contact.
+   .about-trailing__bg is the classic "sticky background, scrolling
+   foreground" trick: position:sticky + a height equal to the viewport,
+   paired with a negative bottom margin equal to that same height so the
+   sticky element reserves zero actual layout space — the very next
+   sibling in the DOM starts overlapping it from the top instead of
+   leaving a blank screen-height gap first. isolation:isolate on the
+   wrapper keeps this local stacking context self-contained so the
+   backdrop's negative z-index can't accidentally slip behind unrelated
+   content elsewhere on the page. */
+.about-trailing {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-trailing__bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-bottom: -100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.about-trailing__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 6%; /* same face-safe crop as the hero's own use of this photo */
+  filter: blur(20px) brightness(0.55) saturate(1.05);
+  transform: scale(1.12); /* blur() softens edges inward; scaling up hides that fringe */
+}
+
+.about-trailing__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 17, 22, 0.35), rgba(14, 17, 22, 0.88));
+}
+
+/* Frosted card every trailing section's real content sits inside — same
+   visual family as .se-panel / .fade-panel higher up the page (translucent
+   dark fill, hairline border, soft shadow), sized to hold much more content
+   than those smaller hero panels, so no backdrop-filter here: the photo
+   behind it is already blurred, and running blur through four long
+   sections' worth of DOM would cost more than it'd add. */
+.trailing-panel {
+  max-width: var(--max-width, 1120px);
+  margin: 0 auto;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 20px;
+  background: rgba(14, 17, 22, 0.74);
+  border: 1px solid rgba(234, 230, 220, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
