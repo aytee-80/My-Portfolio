@@ -8,7 +8,7 @@ export default function Approach() {
   return (
     <section className="approach" id="approach">
       <div className="sechead">
-        <span className="eyebrow">01 — Approach</span>
+        <span className="eyebrow">01 Approach</span>
         <span className="line" />
       </div>
 
