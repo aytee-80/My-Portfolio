@@ -46,14 +46,14 @@ const PROJECTS = [
     year: "2026",
     title: "SecureCode AI",
     blurb:
-      "A vulnerability scanner for code that would otherwise only get caught in review or not at all. It runs a hardened, Groq-backed analysis prompt across 30+ vulnerability categories and surfaces structured findings straight to the frontend instead of a wall of raw model output.",
+      "A vulnerability scanner for code that would otherwise only get caught in review or not at all. It runs a hardened, GEMINI-backed analysis prompt across 30+ vulnerability categories and surfaces structured findings straight to the frontend instead of a wall of raw model output.",
     images: [scan1, scan2, scan3],
     imageLabels: ["Dashboard", "AI Analysing", "Results"],
     tech: [
       { name: "React", icon: "https://cdn.simpleicons.org/react/79818f" },
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/79818f" },
       { name: "CSS", icon: "https://cdn.simpleicons.org/css3/79818f" },
-      { name: "Groq", icon: "https://cdn.simpleicons.org/groq/79818f" }
+      { name: "GEMINI", icon: "https://cdn.simpleicons.org/gemini/79818f" }
     ],
     url: "https://security-scaner-alpha.vercel.app/",
     linkLabel: "View project"
